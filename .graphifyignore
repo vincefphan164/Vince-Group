@@ -1,0 +1,8 @@
+# graphify — ignore noise / shared resources (not project knowledge)
+.
+/graphify-out/
+/.git/
+/node_modules/
+/skills-library/
+# (BaoCao đã xoá — vault obsidian/ là memory chính)
+/.claude/worktrees/

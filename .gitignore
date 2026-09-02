@@ -1,0 +1,11 @@
+# Noise / shared resources / generated
+node_modules/
+skills-library/
+graphify-out/
+*.log
+.env
+secrets.env
+*.local
+.pnpm-store/
+.venv/
+__pycache__/
