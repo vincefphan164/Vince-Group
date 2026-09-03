@@ -8,6 +8,9 @@
     "skill": {
       "*": "allow",
       "composio-*": "deny"
+    },
+    "external_directory": {
+      "C:\\Users\\Windows\\DevSwarmProjects\\Vince-Group\\*": "allow"
     }
   }
 }

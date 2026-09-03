@@ -36,6 +36,7 @@
 
 ## Notes
 - [[log]] — nhật ký trạng thái / việc dở dang
+- [[BAI-HOC]] — bài học cấp hệ thống, tránh lặp sai lầm (skill `hoc-hoi-tu-sai-lam` bắt buộc đọc trước khi làm việc)
 
 ## Kỷ luật token
 - Ghi 1 sự thật 1 dòng, kèm ngày `YYYY-MM-DD`.

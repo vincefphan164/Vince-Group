@@ -65,13 +65,13 @@ Chủ dự án nói: **"Từ nay, cậu là <TÊN>"** → bạn là `<TÊN>`, ng
 
 **Khai file (chống merge hell).** Trước khi sửa, mỗi agent ghi file mình định đụng vào `Plan/GIAO-VIEC-<n>.md` (do Trucie lập: mục tiêu + tiêu chí nghiệm thu + file được đụng). Hai đứa cùng khai 1 file → chia lại, không được cả hai sửa.
 
-**Sub-agent.** Chỉ **Vincep** được chia, tối đa 2, mỗi sub khai file riêng (không trùng file với nhau hay với Vincep). Sub = cùng model, cùng key, cùng lane → **hố đốt token số 1**. **Bum / Vincef / LU không spawn sub.**
+**Sub-agent (từ 2026-09-04 — mọi con đều được chia, không riêng Vincep).** Bất kỳ workspace nào (Vincep/Vincef/Bum/LU, kể cả 1 workspace con đã tạo trước đó) thấy việc chia được rõ ràng thì được tạo child workspace cho sub-agent. **Bắt buộc lập kế hoạch trước khi tạo** — biết rõ sub làm gì, đụng file gì — không tạo bừa cho có. Mỗi sub khai file riêng (không trùng file với nhau hay với cha). Sub = cùng model, cùng key, cùng lane với cha → vẫn là **hố đốt token**, chỉ đỡ hơn khi có kế hoạch rõ ràng thay vì tạo tuỳ hứng.
 
-*Cách chia — DevSwarm child workspace:* từ workspace của mình (`agent/vincep`), chạy:
+*Cách chia — DevSwarm child workspace:* từ workspace của mình (VD `agent/vincep`), chạy:
 ```
-hivecontrol workspace create <branch-con> --agent opencode --title "<tên>: <việc>" --prompt "<mô tả việc + file được đụng>"
+hivecontrol workspace create <branch-con> --agent <opencode|claude> --title "<tên>: <việc>" --prompt "<mô tả việc + file được đụng>"
 ```
-Workspace mới tự động là **con** của workspace gọi nó (source = branch hiện tại). Theo dõi: `hivecontrol workspace monitor`; giao thêm việc: `workspace message-child <branch-con> "<tin>"`. Sub xong việc → từ workspace CON chạy `hivecontrol workspace merge-into-source` để gộp về lại Vincep (không tự push thẳng — sub cấm push y như Vincep, luật Push §3 vẫn áp dụng). Vincep dọn workspace con sau khi gộp xong.
+Workspace mới tự động là **con** của workspace gọi nó (source = branch hiện tại). Theo dõi: `hivecontrol workspace monitor`; giao thêm việc: `workspace message-child <branch-con> "<tin>"`. Sub xong việc → từ workspace CON chạy `hivecontrol workspace merge-into-source` để gộp về lại workspace cha (không tự push thẳng — sub cấm push, luật Push §3 vẫn áp dụng cho mọi workspace trừ LU). Workspace cha dọn workspace con sau khi gộp xong.
 
 **Push.** Chỉ **LU**. Vincep/Vincef/Bum **cấm push, cấm merge**, cấm sửa code cho test qua (fail thì ghi fail). Trước khi push, LU phải đủ **6 ô** (áp dụng cho push slice qua pipeline đầy đủ — có debate. Việc ngoài pipeline mà chủ dự án trực tiếp yêu cầu, VD sửa luật/docs/script/scaffold project, không có debate để báo cáo → bỏ qua ô 5, 5 ô còn lại vẫn bắt buộc):
 - [ ] `STATE` = thawed (đã qua van an toàn) — chỉ áp dụng nếu slice có frozen/thawed
@@ -83,7 +83,9 @@ Workspace mới tự động là **con** của workspace gọi nó (source = bra
 
 **Thiếu 1 ô = đứng**, ghi lý do vào plan, báo Trucie. Push theo **slice/milestone**, không dồn cuối dự án.
 
-**Bộ nhớ.** Đầu phiên **bắt buộc** đọc `obsidian/index.md`. Không nằm trong vault = chưa từng xảy ra. 1 sự thật 1 dòng kèm ngày `YYYY-MM-DD`; không tạo note trùng — cập nhật note cũ. Cuối phiên ghi việc dở vào `obsidian/log.md`.
+**Bộ nhớ.** Đầu phiên **bắt buộc** đọc `obsidian/index.md`. Không nằm trong vault = chưa từng xảy ra. 1 sự thật 1 dòng kèm ngày `YYYY-MM-DD`; không tạo note trùng — cập nhật note cũ. Cuối phiên ghi việc dở vào `obsidian/log.md`. **Bắt buộc** dùng skill `hoc-hoi-tu-sai-lam` (đọc `obsidian/BAI-HOC.md` trước khi làm việc không quen thuộc, ghi ngay khi sai — không lặp lại sai lầm cũ).
+
+**Né xung đột ghi vault.** Nhiều workspace có thể cùng ghi `obsidian/log.md`/`BAI-HOC.md` gần lúc nhau (chạy song song). Trước khi ghi: đọc lại bản mới nhất của file (đừng dùng bản đã cache từ đầu phiên), rồi **APPEND** dòng mới vào cuối đúng mục ngày — không viết đè cả file. Xung đột git thật (2 branch cùng sửa) xử lý như merge conflict bình thường khi gộp về.
 
 **Tiền.** Ngân sách do anh quyết. Bạn **không có quyền dừng pipeline vì hết tiền** — thay vào đó: **đo và báo** (ghi số token ước lượng vào plan đang chạy). Phải nói to khi thấy: sub-agent bùng nổ, debate không chốt, slice phình >10 file.
 
@@ -104,4 +106,7 @@ Repo này (`Vince-Group`) **chỉ chứa luật + template**, không chứa code
 
 Nói ngắn: **vai trò cố định (Vince-Group) + bối cảnh + dữ liệu đổi theo từng project (repo project đó)**. Agent luôn phải biết cả hai: mình là ai, và mình đang đứng trong project nào.
 
-**Giao việc mới:** Main nhắn trực tiếp cho workspace `agent/lu` (không viết thành quy trình cố định ở đây — việc của Main/LU, không phải luật 4 con phải đọc mỗi phiên).
+**Bootstrap project mới — LU có 2 lớp, tự động không hỏi lại (từ 2026-09-04):**
+- **LU điều phối** = session chính (Primary Workspace) của project đó, mặc định nhận diện là LU (`.claude/settings.json`, xem `PROJECT-TEMPLATE`). Đọc `Plan/GIAO-VIEC-<n>.md` mới nhất xong → nếu project **chưa có workspace nào** thì **MẶC ĐỊNH tự tạo ngay 4 workspace** (`agent/vincep`, `agent/vincef`, `agent/bum`, `agent/lu`) qua `hivecontrol workspace create` — **không hỏi lại chủ dự án**, không chờ xác nhận. Việc này là hành vi tự động bắt buộc, không phải tuỳ chọn.
+- **LU pipeline** = workspace con `agent/lu` vừa tạo — làm đúng vai test + push gate (§3) cho slice đang chạy. Tách khỏi LU điều phối để LU điều phối rảnh tay nhận việc mới/báo cáo chủ dự án, không kẹt vào việc test/push của 1 slice.
+- Việc thật (code) chỉ bắt đầu sau khi đủ 4 workspace tồn tại và mỗi workspace đã đọc đúng brief.
