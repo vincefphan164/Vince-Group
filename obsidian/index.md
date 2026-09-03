@@ -1,12 +1,12 @@
 # Vince-Group — Memory Hub (BẮT BUỘC)
 
-> Đây là bộ nhớ duy nhất của hệ. **Không nằm trong vault = chưa từng xảy ra.**
+> Đây là bộ nhớ của hệ. **Không nằm trong vault = chưa từng xảy ra.**
 > Lịch sử chat, trí nhớ session, context cửa sổ — KHÔNG được tính là bộ nhớ.
 > Vault này mở được bằng app Obsidian (chọn folder `obsidian/` làm vault) — chuẩn .md + [[links]].
 
 [[README]]
 
-## Protocol — áp dụng MỌI phiên, MỌI agent (Vincef + LU)
+## Protocol — áp dụng MỌI phiên, MỌI agent
 1. **Đầu phiên:** đọc file này TRƯỚC khi làm bất cứ việc gì. Theo `[[links]]` tới note liên quan tới task.
 2. **Trong phiên:** mọi quyết định / kế hoạch / kết quả / bài học quan trọng → ghi NGAY vào note:
    - Note đã có chủ đề → CẬP NHẬT, không tạo note trùng.
@@ -15,16 +15,29 @@
    - Corpus đổi: `graphify extract . --out graphify-out`
    - Nhớ lại không tốn token: `graphify query "<câu hỏi>" --budget 500`
    - `graphify-out/` là generated — không commit.
-   - graphify cần LLM key cho semantic extraction (deepseek rẻ nhất). Không có key → đọc vault trực tiếp, KHÔNG dừng việc vì thiếu nó.
+   - graphify cần LLM key cho semantic extraction. Không có key → đọc vault trực tiếp, KHÔNG dừng việc vì thiếu nó.
 4. **Cuối phiên:** ghi việc dở dang vào [[log]] để phiên sau (agent nào cũng được) tiếp tục.
+
+## Luật của hệ (từ 2026-09-03)
+- [[../Vince-Home/CLAUDE|Vince-Home/CLAUDE.md — master prompt]]
+- [[../Vince-Home/rules/LUAT-CHUNG|LUAT-CHUNG]] · [[../Vince-Home/rules/PIPELINE|PIPELINE]] · [[../Vince-Home/rules/KEY-LANE|KEY-LANE]] · [[../Vince-Home/rules/DI-TRUYEN-LUAT|DI-TRUYEN-LUAT]]
+- [[../Vince-Home/obsidian/index|Vince-Home vault]] — vault riêng của tầng LUẬT
+
+## Roster — ĐỦ 4 CON (mỗi đứa: file máy đọc + file mô tả)
+| Con | Lane · Model | File máy đọc (CLI nạp) | File mô tả vai |
+|---|---|---|---|
+| **Vincep** | Go · qwen3.8-flash | `.opencode/agents/Vincep.md` | [[../Vince-Home/agents/Vincep\|Vincep]] |
+| **Vincef** | Go · deepseek-v4-flash | `.opencode/agents/Vincef.md` | [[../Vince-Home/agents/Vincef\|Vincef]] |
+| **Bum** | Claude · sonnet | `.claude/agents/Bum.md` | [[../Vince-Home/agents/Bum\|Bum]] |
+| **LU** | Claude · opus | `.claude/agents/LU.md` | [[../Vince-Home/agents/LU\|LU]] |
+
+- **2 lane, mỗi lane 1 key**: `Vincep+Vincef` (Go) · `Bum+LU` (Claude) → xem [[../Vince-Home/rules/KEY-LANE|KEY-LANE]].
+- `Trucie` (Debian) KHÔNG vào project: lập plan, do lường, verify độc lập, giữ ký ức.
+- File mô tả (`Vince-Home/agents/`) cho người + agent đọc; file máy đọc (`.claude|.opencode/agents/`) mới quyết định hành vi. **Sửa hành vi = sửa file máy đọc.**
 
 ## Notes
 - [[log]] — nhật ký trạng thái / việc dở dang
-
-## Roster
-- **Vincef** (OpenCode) — file: `.opencode/agents/Vincef.md`
-- **LU / Long Uyên** (Claude) — file: `.claude/agents/LU.md`
-- Hai đứa là 2 LLM khác nhau, chung 1 bộ quy tắc, chung 1 vault này.
+- [[../Vince-Home/agents/_legacy/Vincef-opencode-full|_legacy/Vincef-opencode-full]] · [[../Vince-Home/agents/_legacy/LU-claude-full|_legacy/LU-claude-full]] — bản 2 con đầu của baseline v0, giữ để đối chiếu (KHÔNG còn hiệu lực)
 
 ## Kỷ luật token
 - Ghi 1 sự thật 1 dòng, kèm ngày `YYYY-MM-DD`.
