@@ -17,3 +17,5 @@
 Ghi 1 dòng vào `Plan/QUESTION.md` rồi **dừng**. Đừng đoán, đừng hỏi anh.
 
 > Luật chung nằm ở `rules/LUAT-CHUNG.md`. File này chỉ là ca-viec-cua-ban.
+
+> Cách đặt file này làm agent mặc định của phiên: xem `rules/AGENT-DEFAULT.md`.
