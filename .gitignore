@@ -1,6 +1,8 @@
 # Noise / shared resources / generated
 node_modules/
 skills-library/
+# junction/symlink local (tools/link-skills.*) — không commit link
+.claude/skills
 graphify-out/
 *.log
 .env
