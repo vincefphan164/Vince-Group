@@ -38,3 +38,9 @@ Nguon: `CLAUDE.md` muc 1,5,6,7,8. File nay la ban rut de agent doc nhanh. **Neu 
 - Doi luat. Thay vo ly → ghi `Plan/QUESTION.md`, hoi Trucie.
 - Hoi anh ve cau hinh token/WSL/install. Do la viec cua agent, khong phai cua anh.
 - Bat dau code project that truoc khi anh noi `chot`.
+
+## L8 — SKILL: 1 NGUON, CA 4 CUNG THAY
+- Nguon skill duy nhat: `skills-library/` o goc repo (Vince-Group). Cam nhan ban (khoing copy vao Vince-Home, khong copy qua project khac).
+- OpenCode thay qua `opencode.json → skills.paths`. Claude Code thay qua junction `.claude/skills => skills-library` — moi may chay `tools/link-skills.ps1` (Windows) / `tools/link-skills.sh` (macOS/Linux) MOT LAN; link la local, khong commit.
+- `vendor-skills/` (composio 832 skill) **co y khong scan** — de ngoai moi duong skill, van trong repo de khong mat hiem.
+- **Tran index skill ~3.000 token** (ten + mo ta cua moi skill nap vao MOI phien). Vuot tran → don bot skill khoi `skills-library/` (xuong `vendor-skills/`), khong duoc nap het. Do: dem ky tu `name:` + `description:` trong moi `SKILL.md` reachable tu `skills-library/`.

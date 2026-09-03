@@ -193,8 +193,10 @@ Vince-Home/
     KEY-LANE.md          (rút từ §2,3: sơ đồ 2 lane + luật relay)
   agents/
     Vincep.md  Vincef.md  Bum.md  LU.md      (4 file: vai trò + model + 3 việc cấm)
-  (KHÔNG copy `skills-library/` vào đây — nó nặng 1142 files, nằm ở repo Vince-Group.
-   Nếu project cần skill → khai đường dẫn trong plan, đừng nhân bản.)
+  (KHÔNG copy `skills-library/` vào đây — skill đã wire sẵn 1 nguồn ở gốc repo Vince-Group:
+   OpenCode đọc `opencode.json → skills.paths`; Claude Code đọc qua junction `.claude/skills`.
+   Agent KHÔNG tự tạo junction — junction là việc của người máy, chạy `tools/link-skills.ps1` MỖI MÁY 1 LẦN.
+   Nếu project cần skill → khai đường dẫn trong plan, đừng nhân bản. Xem `rules/LUAT-CHUNG.md` L8.)
   obsidian/
     index.md             (hub — link tới mọi note)
     log.md
@@ -216,7 +218,7 @@ Vince-Home/
 
 **B3. Viết `tools/push-gate.sh`** chạy được thật (bash, không cần dependency lạ), test bằng cách cố push 1 plan thiếu checkbox → script phải **fail**.
 
-**B4. Kiểm môi trường (chỉ đọc, không cài):** `claude --version`, `opencode --version`, `git --version`. Thiếu đứa nào → ghi vào `Plan/QUESTION.md`, **không tự cài, không tự đổi PATH**.
+**B4. Kiểm môi trường (chỉ đọc, không cài):** `claude --version`, `opencode --version`, `git --version`. Kiểm skill link BẰNG CHẾ ĐỘ ĐỌC: `powershell -File tools\link-skills.ps1 -Check` (exit 0 = OK). Thiếu link → ghi `Plan/QUESTION.md` để anh/chủ máy chạy script 1 lần; **KHÔNG tự tạo junction, KHÔNG copy skills-library vào Vince-Home**. Thiếu đứa nào → ghi vào `Plan/QUESTION.md`, **không tự cài, không tự đổi PATH**.
    ⚠️ **Không có gì trong mục này được làm bằng cách hỏi anh.** Anh không cấu hình token, không mò WSL — đó là việc của bạn + Trucie. Xem `docs/DEVSWARM-FACTS.md` §4.
 
 **B5. Báo cáo:** tạo `BAO-CAO-BOOTSTRAP.md` ở gốc repo, nội dung:
