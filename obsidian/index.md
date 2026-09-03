@@ -19,25 +19,22 @@
 4. **Cuối phiên:** ghi việc dở dang vào [[log]] để phiên sau (agent nào cũng được) tiếp tục.
 
 ## Luật của hệ (từ 2026-09-03)
-- [[../Vince-Home/CLAUDE|Vince-Home/CLAUDE.md — master prompt]]
-- [[../Vince-Home/rules/LUAT-CHUNG|LUAT-CHUNG]] · [[../Vince-Home/rules/PIPELINE|PIPELINE]] · [[../Vince-Home/rules/KEY-LANE|KEY-LANE]] · [[../Vince-Home/rules/DI-TRUYEN-LUAT|DI-TRUYEN-LUAT]]
-- [[../Vince-Home/obsidian/index|Vince-Home vault]] — vault riêng của tầng LUẬT
+- [[../CLAUDE|CLAUDE.md — ĐỊNH DANH CHUNG]] — bất biến + roster + luật chung. **1 file duy nhất**, không còn tầng `Vince-Home/`.
 
-## Roster — ĐỦ 4 CON (mỗi đứa: file máy đọc + file mô tả)
-| Con | Lane · Model | File máy đọc (CLI nạp) | File mô tả vai |
-|---|---|---|---|
-| **Vincep** | Go · qwen3.8-flash | `.opencode/agents/Vincep.md` | [[../Vince-Home/agents/Vincep\|Vincep]] |
-| **Vincef** | Go · deepseek-v4-flash | `.opencode/agents/Vincef.md` | [[../Vince-Home/agents/Vincef\|Vincef]] |
-| **Bum** | Claude · sonnet | `.claude/agents/Bum.md` | [[../Vince-Home/agents/Bum\|Bum]] |
-| **LU** | Claude · opus | `.claude/agents/LU.md` | [[../Vince-Home/agents/LU\|LU]] |
+## Roster — ĐỦ 4 CON
+| Con | Lane · Model | File máy đọc (CLI nạp) |
+|---|---|---|
+| **Vincep** | Go · qwen3.8-flash | `.opencode/agents/Vincep.md` |
+| **Vincef** | Go · deepseek-v4-flash | `.opencode/agents/Vincef.md` |
+| **Bum** | Claude · sonnet | `.claude/agents/Bum.md` |
+| **LU** | Claude · opus | `.claude/agents/LU.md` |
 
-- **2 lane, mỗi lane 1 key**: `Vincep+Vincef` (Go) · `Bum+LU` (Claude) → xem [[../Vince-Home/rules/KEY-LANE|KEY-LANE]].
+- **2 lane, mỗi lane 1 key**: `Vincep+Vincef` (Go) · `Bum+LU` (Claude) → luật relay ở `CLAUDE.md` §3.
 - `Trucie` (Debian) KHÔNG vào project: lập plan, do lường, verify độc lập, giữ ký ức.
-- File mô tả (`Vince-Home/agents/`) cho người + agent đọc; file máy đọc (`.claude|.opencode/agents/`) mới quyết định hành vi. **Sửa hành vi = sửa file máy đọc.**
+- **Sửa hành vi = sửa file máy đọc** (`.claude|.opencode/agents/`), không sửa mô tả trong chat.
 
 ## Notes
 - [[log]] — nhật ký trạng thái / việc dở dang
-- [[../Vince-Home/agents/_legacy/Vincef-opencode-full|_legacy/Vincef-opencode-full]] · [[../Vince-Home/agents/_legacy/LU-claude-full|_legacy/LU-claude-full]] — bản 2 con đầu của baseline v0, giữ để đối chiếu (KHÔNG còn hiệu lực)
 
 ## Kỷ luật token
 - Ghi 1 sự thật 1 dòng, kèm ngày `YYYY-MM-DD`.

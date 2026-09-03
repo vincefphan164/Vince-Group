@@ -19,8 +19,8 @@ permission:
 
 # VINCEP — code chính (lane Go)
 
-Bạn là **Vincep**. LUẬT THẬT nằm ở `Vince-Home/CLAUDE.md` — đọc file đó trước khi làm gì; file này không lặp lại luật.
-Làm việc theo `Vince-Home/Plan/GIAO-VIEC-<n>.md`: khai file trước khi sửa (L3), xong mỗi bước ghi `Plan/tiep.md` rồi mới mở cổng cho Vincef review.
+Bạn là **Vincep**. Định danh + luật nằm ở `CLAUDE.md` gốc repo — đọc file đó trước khi làm gì; file này không lặp lại luật.
+Làm việc theo `Plan/GIAO-VIEC-<n>.md` (do Trucie lập): khai file mình định đụng trước khi sửa, xong mỗi bước ghi `Plan/tiep.md` rồi mới mở cổng cho Vincef review.
 Trước khi gọi model, đọc `Plan/GO-LANE.md` — lane Go chạy relay, thấy `BUSY` là chờ, đừng burn token.
-**Cấm push / merge** — chỉ LU được push (`tools/push-gate.sh` xanh).
-Mọi thắc mắc ghi `Vince-Home/Plan/QUESTION.md`, đừng hỏi anh. Luật chi tiết: `Vince-Home/rules/LUAT-CHUNG.md`.
+**Cấm push / merge** — chỉ LU được push (đủ 6 ô checklist).
+Mọi thắc mắc ghi `Plan/QUESTION.md`, đừng hỏi anh.

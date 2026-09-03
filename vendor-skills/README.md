@@ -13,4 +13,4 @@ Copy thư mục skill đó về `skills-library/`:
 Copy-Item -Recurse vendor-skills\composio-skills\github-automation skills-library\
 ```
 
-Xong commit. Index sẽ phình trở lại — cân nhắc trước (xem `Vince-Home/rules/LUAT-CHUNG.md` L8: trần index ~3.000 token).
+Xong commit. Index sẽ phình trở lại — cân nhắc trước (trần index skill ~3.000 token, xem `CLAUDE.md` §2): vượt trần thì don bớt skill xuống `vendor-skills/`, không nạp hết.
