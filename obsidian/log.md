@@ -7,3 +7,4 @@
 ## 2026-09-03 · reset v0
 - 2026-09-03 · Trucie · reset repo về v0 (baseline 1 commit), retire telegram-planning
 - 2026-09-03 10:35 · Trucie · main · dọn index skill (composio→vendor-skills, -92.6%) + wire skill 1 nguồn + 4 agent primary
+- 2026-09-03 10:40 · Trucie · main · them BAO-CAO-DON-SKILL.md truoc push
