@@ -37,3 +37,6 @@
 - 2026-09-03 10:35 · Trucie · main · dọn index skill (composio→vendor-skills, -92.6%) + wire skill 1 nguồn + 4 agent primary
 - 2026-09-03 10:40 · Trucie · main · them BAO-CAO-DON-SKILL.md truoc push
 - 2026-09-03 11:5x · Trucie · go VINCE-HOME — repo chi con 1 file dinh danh chung (CLAUDE.md goc); don link chet o README + obsidian/index + 4 file agent; archive day du o Trucie-BACKUP/backup/archived-notes/Vince-Home-retired-2026-09-03
+
+## 2026-09-04 · toi uu token
+- 2026-09-04 · LU · tach 3 doan dai trong CLAUDE.md (cach chia sub-agent, push checklist, bootstrap project moi) thanh 3 skill rieng (bootstrap-project, chia-sub-agent, push-checklist) - load theo yeu cau thay vi moi phien deu tra phi doc du khong dung toi. CLAUDE.md con lai chi giu Bat bien/Roster/con tro + 1 dong tro skill (95 dong, tu 113). Khong rotate log.md (moi 39 dong, chua toi nguong ~150) - ghi quy tac rotate vao index.md de ap dung dung luc

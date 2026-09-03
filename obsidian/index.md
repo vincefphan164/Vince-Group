@@ -42,3 +42,4 @@
 - Ghi 1 sự thật 1 dòng, kèm ngày `YYYY-MM-DD`.
 - Đọc theo phần cần (grep/head), không nạp cả vault mỗi lần.
 - Việc gì quan trọng mà chỉ nói trong chat, chưa ghi vault → coi như chưa làm.
+- **Rotate `log.md`:** khi vượt ~150 dòng, dồn phần cũ (giữ ~20-30 dòng gần nhất trong `log.md`) sang `obsidian/archive/log-YYYY-MM.md`, thêm link vào đây. Chưa tới ngưỡng thì đừng rotate — làm giả vờ chỉ tốn thêm 1 file rác.
