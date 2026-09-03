@@ -16,7 +16,7 @@ Xây một **dây chuyền sản xuất phần mềm chạy bằng 4 agent AI**,
 - Chi phí token **không được vượt trần**, nhưng cũng **không được làm nghẹt pipeline**.
 - Sai thì **dừng lại và hỏi**, không tự sáng tác thêm luật.
 
-**Repo này tên thật trên GitHub: `vincefphan164/Vince_Home`** (gạch dưới, do DevSwarm tạo). Folder cục bộ của anh có thể tên `Vince-Home` — **cùng một repo**, đừng đổi tên.
+**Vị trí thực tế:** bộ luật này nằm ở thư mục `Vince-Home/` **bên trong repo `vincefphan164/Vince-Group`**. Tách sang repo `Vince_Home` riêng sẽ tính sau khi anh bật private. **Mọi đường dẫn trong file này tính từ `Vince-Home/`** (ví dụ `rules/LUAT-CHUNG.md` = `Vince-Home/rules/LUAT-CHUNG.md`). Nếu bạn thấy mình đang đứng ở gốc repo, `cd Vince-Home` rồi hãy làm.
 
 **Nhiệm vụ của bạn ngay bây giờ:** làm theo mục **§12 — VIỆC PHẢI LÀM**, xong thì báo cáo theo mẫu §13, **rồi dừng chờ anh duyệt**. Không tự ý bắt tay vào code project thật.
 
