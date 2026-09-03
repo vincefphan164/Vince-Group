@@ -11,3 +11,7 @@ secrets.env
 .pnpm-store/
 .venv/
 __pycache__/
+
+# agent mac dinh per-worktree (set-default-agent.ps1 tao ra) — khong commit
+.claude/settings.json
+.claude/settings.local.json
