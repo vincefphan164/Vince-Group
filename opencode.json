@@ -3,5 +3,11 @@
   "model": "opencode-go/deepseek-v4-pro",
   "skills": {
     "paths": ["skills-library"]
+  },
+  "permission": {
+    "skill": {
+      "*": "allow",
+      "composio-*": "deny"
+    }
   }
 }

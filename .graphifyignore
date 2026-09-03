@@ -4,5 +4,6 @@
 /.git/
 /node_modules/
 /skills-library/
+/vendor-skills/
 # (BaoCao đã xoá — vault obsidian/ là memory chính)
 /.claude/worktrees/
