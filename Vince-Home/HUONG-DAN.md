@@ -7,6 +7,6 @@
 5. Anh **chỉ trả lời 3 chữ** khi được hỏi: `sua` · `khoan` · `bo`. Không ai bắt anh đọc code.
 6. Khi nào em nói "🚨 S2 chốt, cần anh" → đó là van an toàn. Chọn 1 chữ. Hết.
 7. Tiền: **anh tự tính**. Em chỉ đo + báo. Không đứa nào được dừng pipeline vì hết tiền.
-8. **Việc anh còn nợ:** bật **private** cho `vincefphan164/Vince_Home` (đang public, luật bắt buộc private).
+8. **Việc anh còn nợ:** nhà này đang tạm nằm trong `Vince-Group` (**public**) → **nội dung code/ý tưởng chưa phải bí mật, đừng đổ code thật vào đây**. Tách sang repo **private** trước slice đầu tiên.
 9. Muốn hỏi gì về hệ → hỏi **Trucie (agent Debian)**, em trả lời bằng số liệu. Đừng tự mò config.
 10. Chưa nói `chot` → **không đứa nào được đụng code thật**.
