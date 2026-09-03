@@ -4,8 +4,8 @@
 # tao bang New-Item -ItemType Junction tren NTFS khong yeu quyen admin,
 # va Claude Code doc xuyen qua no nhu thu muc thuong.
 #
-# Chay 1 lan moi may, o GOC repo:   powershell -File tools\link-skills.ps1
-# Kiem tra trang thai:              powershell -File tools\link-skills.ps1 -Check
+# Chay 1 lan moi may, o GOC repo:   pwsh -File tools\link-skills.ps1
+# Kiem tra trang thai:              pwsh -File tools\link-skills.ps1 -Check
 #
 # AN TOAN: script chi dong tac .claude\skills. Khong bao gio cham
 # .claude\agents, .claude\settings*.json, hay bat ky file nao khac.

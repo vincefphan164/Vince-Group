@@ -1,0 +1,27 @@
+# <PROJECT_NAME> — Memory Hub (BẮT BUỘC)
+
+> Đây là bộ nhớ RIÊNG của project **<PROJECT_NAME>**. Không nằm trong vault này = chưa từng xảy ra trong project này.
+> Không dùng chung với `obsidian/` của `Vince-Group` — bên đó chỉ ghi việc liên quan tới luật chung/roster.
+> Lịch sử chat, trí nhớ session, context cửa sổ — KHÔNG được tính là bộ nhớ.
+> Vault này mở bằng app Obsidian (chọn thư mục `obsidian/` này làm vault).
+
+[[README]]
+
+## Protocol — áp dụng MỌI phiên, MỌI agent làm việc trong project này
+1. **Đầu phiên:** đọc `CLAUDE.md` gốc repo NÀY trước (dẫn tới luật chung ở Vince-Group), rồi đọc file này để biết đang làm tới đâu.
+2. **Trong phiên:** quyết định / kế hoạch / kết quả / bài học quan trọng → ghi NGAY vào note:
+   - Note đã có chủ đề → CẬP NHẬT, không tạo note trùng.
+   - Chủ đề mới → tạo note, thêm link vào file này.
+3. **Cuối phiên:** ghi việc dở dang vào [[log]] để phiên sau (agent nào cũng được, kể cả người mới) tiếp tục đúng mạch.
+
+## Luật của project này
+- Luật chung + roster + lane + pipeline: `C:\Users\Windows\DevSwarmProjects\Vince-Group\CLAUDE.md`
+- Bối cảnh riêng project này: `../CLAUDE.md` (gốc repo này)
+
+## Notes
+- [[log]] — nhật ký trạng thái / việc dở dang của project này
+
+## Kỷ luật token
+- Ghi 1 sự thật 1 dòng, kèm ngày `YYYY-MM-DD`.
+- Đọc theo phần cần (grep/head), không nạp cả vault mỗi lần.
+- Việc gì quan trọng mà chỉ nói trong chat, chưa ghi vault → coi như chưa làm.

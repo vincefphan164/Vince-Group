@@ -1,8 +1,8 @@
 # set-default-agent.ps1 — đặt agent MẶC ĐỊNH cho RIÊNG worktree này (Claude Code)
 # Dùng khi DevSwarm cho chọn default agent per workspace: chạy 1 lần trong mỗi workspace Claude.
-#   powershell -File tools\set-default-agent.ps1 Bum
-#   powershell -File tools\set-default-agent.ps1 LU
-#   powershell -File tools\set-default-agent.ps1 -Check
+#   pwsh -File tools\set-default-agent.ps1 Bum
+#   pwsh -File tools\set-default-agent.ps1 LU
+#   pwsh -File tools\set-default-agent.ps1 -Check
 # Lý do cần file riêng từng worktree: .claude/settings.json là đường DUY NHẤT khai agent mặc định
 # cho mọi session của project, và nó nằm trong thư mục làm việc → 2 workspace cùng repo
 # phải có 2 bản khác nhau. Worktree DevSwarm là 2 thư mục khác nhau nên OK.

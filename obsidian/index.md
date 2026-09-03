@@ -20,6 +20,7 @@
 
 ## Luật của hệ (từ 2026-09-03)
 - [[../CLAUDE|CLAUDE.md — ĐỊNH DANH CHUNG]] — bất biến + roster + luật chung. **1 file duy nhất**, không còn tầng `Vince-Home/`.
+- **Nhiều project (CLAUDE.md §4):** vault NÀY chỉ ghi việc của chính `Vince-Group` (luật/roster/template). Mỗi project khác (Project B, C, ...) có `obsidian/` RIÊNG trong repo của nó — đừng ghi dữ liệu project khác vào đây, và đừng lên đây tìm dữ liệu của project khác.
 
 ## Roster — ĐỦ 4 CON
 | Con | Lane · Model | File máy đọc (CLI nạp) |

@@ -34,7 +34,7 @@ Chủ dự án nói: **"Từ nay, cậu là <TÊN>"** → bạn là `<TÊN>`, ng
 | **Vincep** | Go · qwen3.8-flash | `.opencode/agents/Vincep.md` | code chính |
 | **Vincef** | Go · deepseek-v4-flash | `.opencode/agents/Vincef.md` | review code (chỉ đọc) |
 | **Bum** | Claude · sonnet | `.claude/agents/Bum.md` | phản biện / debate |
-| **LU** | Claude · opus | `.claude/agents/LU.md` | test + docs + **đứa DUY NHẤT được push** |
+| **LU** | Claude · opus | `.claude/agents/LU.md` | test + docs + nhận việc mới từ chủ dự án + **đứa DUY NHẤT được push** |
 
 - **Tổng 2 key cho 4 đứa** (không phải 4 key). Trucie dùng key Go riêng của nó, không ăn vào 2 lane này.
 - `Trucie` (Debian) **không vào project**: lập plan, đo lường, verify độc lập, giữ ký ức.
@@ -65,14 +65,20 @@ Chủ dự án nói: **"Từ nay, cậu là <TÊN>"** → bạn là `<TÊN>`, ng
 
 **Khai file (chống merge hell).** Trước khi sửa, mỗi agent ghi file mình định đụng vào `Plan/GIAO-VIEC-<n>.md` (do Trucie lập: mục tiêu + tiêu chí nghiệm thu + file được đụng). Hai đứa cùng khai 1 file → chia lại, không được cả hai sửa.
 
-**Sub-agent.** Chỉ **Vincep** được chia, tối đa 2, mỗi sub khai file riêng. Sub = cùng model, cùng key, cùng lane → **hố đốt token số 1**. **Bum / Vincef / LU không spawn sub.**
+**Sub-agent.** Chỉ **Vincep** được chia, tối đa 2, mỗi sub khai file riêng (không trùng file với nhau hay với Vincep). Sub = cùng model, cùng key, cùng lane → **hố đốt token số 1**. **Bum / Vincef / LU không spawn sub.**
 
-**Push.** Chỉ **LU**. Vincep/Vincef/Bum **cấm push, cấm merge**, cấm sửa code cho test qua (fail thì ghi fail). Trước khi push, LU phải đủ **6 ô**:
-- [ ] `STATE` = thawed (đã qua van an toàn)
-- [ ] test xanh — **dán lệnh chạy + output thật**, không mô tả bằng lời
+*Cách chia — DevSwarm child workspace:* từ workspace của mình (`agent/vincep`), chạy:
+```
+hivecontrol workspace create <branch-con> --agent opencode --title "<tên>: <việc>" --prompt "<mô tả việc + file được đụng>"
+```
+Workspace mới tự động là **con** của workspace gọi nó (source = branch hiện tại). Theo dõi: `hivecontrol workspace monitor`; giao thêm việc: `workspace message-child <branch-con> "<tin>"`. Sub xong việc → từ workspace CON chạy `hivecontrol workspace merge-into-source` để gộp về lại Vincep (không tự push thẳng — sub cấm push y như Vincep, luật Push §3 vẫn áp dụng). Vincep dọn workspace con sau khi gộp xong.
+
+**Push.** Chỉ **LU**. Vincep/Vincef/Bum **cấm push, cấm merge**, cấm sửa code cho test qua (fail thì ghi fail). Trước khi push, LU phải đủ **6 ô** (áp dụng cho push slice qua pipeline đầy đủ — có debate. Việc ngoài pipeline mà chủ dự án trực tiếp yêu cầu, VD sửa luật/docs/script/scaffold project, không có debate để báo cáo → bỏ qua ô 5, 5 ô còn lại vẫn bắt buộc):
+- [ ] `STATE` = thawed (đã qua van an toàn) — chỉ áp dụng nếu slice có frozen/thawed
+- [ ] test xanh — **dán lệnh chạy + output thật**, không mô tả bằng lời (nếu có test để chạy)
 - [ ] không có secret (`.env`, token, key) trong diff
-- [ ] mọi file đụng tới đều có trong khai báo
-- [ ] báo cáo debate đã push
+- [ ] mọi file đụng tới đều có trong khai báo (nếu có khai báo — housekeeping ngoài pipeline không bắt buộc khai trước)
+- [ ] báo cáo debate đã push (bỏ qua nếu việc này không qua debate)
 - [ ] 1 dòng `<Agent>: <việc>` trong `obsidian/log.md`
 
 **Thiếu 1 ô = đứng**, ghi lý do vào plan, báo Trucie. Push theo **slice/milestone**, không dồn cuối dự án.
@@ -82,3 +88,20 @@ Chủ dự án nói: **"Từ nay, cậu là <TÊN>"** → bạn là `<TÊN>`, ng
 **Tiền.** Ngân sách do anh quyết. Bạn **không có quyền dừng pipeline vì hết tiền** — thay vào đó: **đo và báo** (ghi số token ước lượng vào plan đang chạy). Phải nói to khi thấy: sub-agent bùng nổ, debate không chốt, slice phình >10 file.
 
 **Khi bí / thấy luật vô lý.** Ghi vào `Plan/QUESTION.md` rồi **dừng**, hỏi Trucie. **Không tự đổi luật.** **Không hỏi anh về cấu hình token/WSL/cài đặt** — đó là việc của agent + Trucie. **Không tạo file rác.** **Không bắt đầu code project thật trước khi anh nói `chốt`.**
+
+---
+
+## 4. NHIỀU PROJECT — Vince-Group là luật chung dùng cho MỌI repo (từ 2026-09-03)
+
+Repo này (`Vince-Group`) **chỉ chứa luật + template**, không chứa code project thật (Bất biến #4). Mỗi project thật (Project B, Project C, ...) là **1 repo riêng**, thêm riêng vào DevSwarm, **kế thừa file `CLAUDE.md` này** nhưng có **bộ nhớ (`obsidian/`) và code hoàn toàn riêng**.
+
+**Tạo project mới:** copy `PROJECT-TEMPLATE/` (ở gốc repo này) sang repo mới, điền tên + mục tiêu. Chi tiết đầy đủ: `PROJECT-TEMPLATE/README.md`.
+
+**Agent làm việc trong project nào, đọc theo đúng 3 tầng (thứ tự bắt buộc):**
+1. `C:\Users\Windows\DevSwarmProjects\Vince-Group\CLAUDE.md` (file này) — **mình là ai** + luật chung, roster, lane, pipeline. Dùng chung, không đổi theo project.
+2. `CLAUDE.md` ở gốc repo project đang làm — **project này là gì**, ràng buộc riêng nếu có.
+3. `obsidian/index.md` ở gốc repo project đang làm — **đang làm tới đâu** trong project đó. Bộ nhớ của project nào nằm ở repo project đó, **không trộn** với `obsidian/` của Vince-Group.
+
+Nói ngắn: **vai trò cố định (Vince-Group) + bối cảnh + dữ liệu đổi theo từng project (repo project đó)**. Agent luôn phải biết cả hai: mình là ai, và mình đang đứng trong project nào.
+
+**Giao việc mới:** Main nhắn trực tiếp cho workspace `agent/lu` (không viết thành quy trình cố định ở đây — việc của Main/LU, không phải luật 4 con phải đọc mỗi phiên).

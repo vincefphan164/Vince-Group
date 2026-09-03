@@ -1,0 +1,8 @@
+# Log — trạng thái & việc dở dang (project <PROJECT_NAME>)
+
+> Mỗi cuối phiên, agent ghi 1 mục. Mới → cũ đọc từ xuống. Format: `YYYY-MM-DD · agent · nội dung`.
+
+[[index]]
+
+## <YYYY-MM-DD> · khởi tạo
+- <YYYY-MM-DD> · <agent> · tạo project từ PROJECT-TEMPLATE của Vince-Group

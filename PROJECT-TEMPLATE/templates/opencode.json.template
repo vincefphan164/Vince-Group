@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "opencode-go/deepseek-v4-pro",
+  "skills": {
+    "paths": ["C:\\Users\\Windows\\DevSwarmProjects\\Vince-Group\\skills-library"]
+  },
+  "permission": {
+    "skill": {
+      "*": "allow",
+      "composio-*": "deny"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+# <PROJECT_NAME> — điểm vào
+
+> Repo này là **1 project riêng**, tách biệt hoàn toàn khỏi `Vince-Group` (code, bộ nhớ, lịch sử).
+> Luật chung, roster 4 con, 2 lane, pipeline, van an toàn — **KHÔNG lặp lại ở đây**, nằm ở:
+>
+> **`C:\Users\Windows\DevSwarmProjects\Vince-Group\CLAUDE.md`**
+>
+> **Đọc TOÀN BỘ file đó TRƯỚC KHI LÀM BẤT CỨ VIỆC GÌ.** Đó là luật duy nhất, áp dụng cho MỌI project, không riêng gì cái này.
+
+---
+
+## Cách đọc đúng thứ tự (mọi agent, đầu mỗi phiên)
+
+1. Đọc `C:\Users\Windows\DevSwarmProjects\Vince-Group\CLAUDE.md` — **bạn là ai** (Vincep/Vincef/Bum/LU), bất biến, luật chung, lane, pipeline.
+2. Đọc file này (`CLAUDE.md` của repo hiện tại) — **project này là gì**, mục tiêu, ràng buộc riêng (nếu có).
+3. Đọc `obsidian/index.md` **của repo hiện tại** — **đang làm tới đâu** trong project này. Đây là bộ nhớ RIÊNG của project này, KHÔNG chung với `obsidian/` của Vince-Group.
+4. Bắt tay vào việc theo đúng vai đã đọc ở bước 1.
+
+Không được bỏ qua bước nào. Không nhớ mình đang ở project nào = chưa đọc bước 2+3.
+
+---
+
+## Bối cảnh project này (điền khi tạo project)
+
+- **Tên:** <điền>
+- **Mục tiêu:** <điền>
+- **Chủ dự án:** anh Willee (như Vince-Group)
+- **Riêng tư:** nếu repo này chứa code thật → **BẮT BUỘC private** (theo Bất biến #4 của Vince-Group). Đừng bao giờ đổ code project thật ngược vào `Vince-Group` (repo đó public).
+
+## Ràng buộc riêng của project này (nếu có, khác/thêm luật chung)
+
+<điền, hoặc để trống nếu không có gì khác luật chung>
